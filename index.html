@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl">
+<head>
+    <meta charset="utf-8" />
+    <title>SignalR Simple Chat</title>
+</head>
+<body>
+    <form>
+        <input type="text" ng-model="user.name" />
+        <input type="text" ng-model="user.message" />
+        <button ng-click="send()">send</button>
+
+        <ul>
+            <li ng-repeat="item in messages">
+                <b ng-bind="item.name"></b> : {{item.message}}
+            </li>
+        </ul>
+    </form>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/jquery-1.6.4.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.1.min.js"></script>
+    <script src="signalr/hubs"></script>
+    <script src="app.js"></script>
+    <script src="SignalR-factory.js"></script>
+</body>
+</html>
